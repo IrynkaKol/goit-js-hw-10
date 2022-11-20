@@ -21,7 +21,7 @@ debounce(e => {
 fetchСountries(trimmedValue).then(data => {
     console.log(data)
     
-    if(data.lenght > 10) {
+    if(data.length > 10) {
         Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
     } else if (data.length === 0) {
         Notiflix.Notify.failure('Oops, there is no country with that name');
