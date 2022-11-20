@@ -26,7 +26,7 @@ fetchСountries(trimmedValue).then(data => {
     } else if (data.length === 0) {
         Notiflix.Notify.failure('Oops, there is no country with that name');
 
-    } else if (data.length >= 2 && data.lenght <= 10) {
+    } else if (data.length >= 2 && data.length <= 10) {
         renderCountryList(data);
 
     } else if (data.length=== 1) {
@@ -43,9 +43,9 @@ function renderCountryList(countries) {
       .map(country => {
         return `<li>
         <img src="${country.flags.svg}" alt="Flag of ${
-          country.name
+          country.name.common
         }" width="30" hight="20">
-           <b>${country.name}</p>
+           <b>${country.name.common}</p>
                   </li>`;
       })
       .join('');
