@@ -68,7 +68,7 @@ function renderOneCountry(countries) {
     <img src="${country.flags.svg}"
     alt="Flag of ${country.name.common}"
     width="30" hight="20">
-       <h1>${country.name.common}</h1>
+       <b class = "country-list_header">${country.name.common}</b>
           <p><b>Capital</b>: ${country.capital}</p>
           <p><b>Population</b>: ${country.population}</p>
           <p><b>Languages</b>: ${Object.values(country.languages)} </p>
