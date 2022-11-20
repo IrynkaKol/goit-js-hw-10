@@ -23,13 +23,13 @@ fetchСountries(trimmedValue).then(data => {
     
     if(data.lenght > 10) {
         Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
-    } else if (data.lenght === 0) {
+    } else if (data.length === 0) {
         Notiflix.Notify.failure('Oops, there is no country with that name');
 
-    } else if (data.lenght >= 2 && data.lenght <= 10) {
+    } else if (data.length >= 2 && data.lenght <= 10) {
         renderCountryList(data);
 
-    } else if (data.lenght === 1) {
+    } else if (data.length=== 1) {
     renderOneCountry(data);
     } 
 });
@@ -60,9 +60,9 @@ function renderOneCountry(countries) {
       .map(country => {
         return `<li>
     <img src="${country.flags.svg}"
-    alt="Flag of ${country.name}"
+    alt="Flag of ${country.name.common}"
     width="30" hight="20">
-       <h1>${country.name}</h1>
+       <h1>${country.name.common}</h1>
           <p><b>Capital</b>: ${country.capital}</p>
           <p><b>Population</b>: ${country.population}</p>
           <p><b>Languages</b>: ${Object.values(country.languages)} </p>

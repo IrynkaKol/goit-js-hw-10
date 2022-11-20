@@ -7,9 +7,6 @@ export function fetchСountries (name) {
     .then(resp => {
         //console.log(resp)
         if(!resp.ok){
-            if (response.status === 404) {
-                return [];
-              }
             
   throw new Error(resp.statusText); //Страхуємо себе від того, що 404 помилка для браузера не є помилка
         }
