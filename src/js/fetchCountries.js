@@ -8,10 +8,11 @@ export function fetchСountries (name) {
         //console.log(resp)
         if(!resp.ok){
             
+            
   throw new Error(resp.statusText); //Страхуємо себе від того, що 404 помилка для браузера не є помилка
         }
         return resp.json();
     })//.then(data => console.log(data)) // data повернулась з resp.json
-    .catch(err => error(err))
+    .catch(err => console.error(err))
     
 }
