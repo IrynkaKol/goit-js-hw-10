@@ -19,7 +19,7 @@ debounce(e => {
 
     if (trimmedValue !== '') {
 fetchСountries(trimmedValue).then(data => {
-    console.log(data)
+    //console.log(data)
     
     if(data.length > 10) {
       
@@ -28,8 +28,9 @@ fetchСountries(trimmedValue).then(data => {
           );
 
     } else if (data.length === 0) {
-     console.log(data)
+     
       Notiflix.Notify.failure('Oops, there is no country with that name');
+      
 
     } else if (data.length >= 2 && data.length <= 10) {
 

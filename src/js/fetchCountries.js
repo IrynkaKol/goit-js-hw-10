@@ -12,7 +12,7 @@ export function fetchСountries (name) {
   throw new Error(resp.statusText); //Страхуємо себе від того, що 404 помилка для браузера не є помилка
         }
         return resp.json();
-    })//.then(data => console.log(data)) // data повернулась з resp.json
+    })//.then(data =>  console.log(data)) // data повернулась з resp.json
     .catch(err => console.error(err))
     
 }
