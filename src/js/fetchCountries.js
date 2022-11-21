@@ -7,9 +7,10 @@ export function fetchСountries (name) {
     .then(resp => {
         //console.log(resp)
         if(!resp.ok){
-            
-            
-  throw new Error(resp.statusText); //Страхуємо себе від того, що 404 помилка для браузера не є помилка
+            if (resp.status === 404) {
+                return [];
+              }
+            throw new Error(resp.statusText); //Страхуємо себе від того, що 404 помилка для браузера не є помилка
         }
         return resp.json();
     })//.then(data =>  console.log(data)) // data повернулась з resp.json
